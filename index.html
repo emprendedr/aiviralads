@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Aiviralads | Ingresos Residuales 5 Niveles + Tráfico</title>
+  <title>Aiviralads | Sistema de Marketing + Ingresos Residuales</title>
   <!-- Google Fonts + Font Awesome + AOS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -127,7 +127,37 @@
       color: transparent;
     }
 
-    /* Video YouTube */
+    /* Caja explicativa nueva (primera parte mejorada) */
+    .explicacion-sistema {
+      background: linear-gradient(115deg, #1e293b, #0f172a);
+      border-radius: 48px;
+      padding: 2rem 2rem;
+      margin: 1.5rem 0 2rem 0;
+      border-left: 6px solid var(--primary-light);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s;
+    }
+    .explicacion-sistema p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: #e2e8f0;
+      font-weight: 500;
+    }
+    .explicacion-sistema i {
+      color: var(--primary-light);
+      margin-right: 10px;
+    }
+    .explicacion-sistema .badge-info {
+      background: rgba(139, 92, 246, 0.2);
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+      color: #c084fc;
+    }
+
+    /* Video YouTube con API */
     .video-intro {
       background: #111827;
       border-radius: 48px;
@@ -145,9 +175,11 @@
       border-radius: 28px;
       overflow: hidden;
       margin-top: 1rem;
+      background: #000;
     }
 
-    .video-wrapper iframe {
+    .video-wrapper iframe,
+    .video-wrapper #youtube-player {
       position: absolute;
       top: 0;
       left: 0;
@@ -268,6 +300,10 @@
       border-radius: 80px;
       box-shadow: 0 0 15px rgba(139, 92, 246, 0.6);
       animation: pulse 2s infinite;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
     }
 
     @keyframes pulse {
@@ -284,13 +320,25 @@
       border-top: 1px solid #1e293b;
     }
 
-    /* Responsive */
+    /* Aviso redirección */
+    .redirect-notice {
+      background-color: #f97316cc;
+      color: #0f172a;
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      display: inline-block;
+      margin-top: 12px;
+      backdrop-filter: blur(4px);
+    }
+
     @media (max-width: 800px) {
       .navbar { flex-direction: column; }
       .section-title { font-size: 1.8rem; }
+      .explicacion-sistema p { font-size: 1rem; }
     }
 
-    /* Enlaces dentro de footer */
     footer a {
       color: #a78bfa;
       text-decoration: none;
@@ -302,13 +350,13 @@
 </head>
 <body>
 
-  <!-- Floating WhatsApp (no muestra número, solo icono) -->
+  <!-- Floating WhatsApp -->
   <div class="float-wa" id="floatWaButton" style="position:fixed; bottom:25px; right:25px; background:#25D366; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2rem; color:white; box-shadow:0 8px 20px rgba(0,0,0,0.3); z-index:99; cursor:pointer;">
     <i class="fab fa-whatsapp"></i>
   </div>
 
   <div class="container">
-    <!-- Navbar (sin número visible) -->
+    <!-- Navbar -->
     <nav class="navbar">
       <div class="logo">
         <h1>Aiviralads</h1>
@@ -324,18 +372,25 @@
       </div>
     </nav>
 
-    <!-- VIDEO DE YOUTUBE EXPLICATIVO -->
-    <div class="video-intro" data-aos="fade-up">
-      <h2 style="color: white;">🎬 ¿Cómo funciona Aiviralads?</h2>
-      <p style="color: #cbd5e1; margin-bottom: 1rem;">Descubre el sistema de ingresos residuales y tráfico viral en 5 niveles</p>
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=9xWpPvTtL2bFcV7A" title="Video explicativo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <!-- Reemplazar con tu ID de video real -->
-      </div>
-      <p style="color: #94a3b8; margin-top: 0.8rem; font-size: 0.8rem;">*Video demostrativo - Aprende a duplicar tus ingresos</p>
+    <!-- PRIMERA PARTE MEJORADA: Texto solicitado -->
+    <div class="explicacion-sistema" data-aos="fade-up">
+      <div class="badge-info"><i class="fas fa-lightbulb"></i> ¿Qué es Aiviralads?</div>
+      <p><i class="fas fa-quote-left"></i> Aiviralads es un sistema para ayudar a emprendedores a crecer apalancándose de la herramienta de marketing de Adincomenetwork lo cual ayuda a personas a generar ingresos online, a comerciantes a dar a conocer más sus productos y servicios. <strong>Te explicamos cómo funciona la herramienta.</strong></p>
     </div>
 
-    <!-- Hero resumido -->
+    <!-- VIDEO DE YOUTUBE REAL CON REDIRECCIÓN AUTOMÁTICA (3 segundos antes de terminar) -->
+    <div class="video-intro" data-aos="fade-up">
+      <h2 style="color: white;">🎬 Mira el video explicativo completo</h2>
+      <p style="color: #cbd5e1; margin-bottom: 1rem;">Descubre el poder de Adincomenetwork + ingresos residuales en 5 niveles</p>
+      <div class="video-wrapper">
+        <!-- Aquí se insertará dinámicamente el reproductor de YouTube con la API -->
+        <div id="youtube-player"></div>
+      </div>
+      <div id="redirectStatus" class="redirect-notice" style="display: none;">⏳ Serás redirigido al registro en 3... 2... 1...</div>
+      <p style="color: #94a3b8; margin-top: 0.8rem; font-size: 0.8rem;">*El sistema te redirigirá automáticamente al registro cuando faltan 3 segundos para finalizar.</p>
+    </div>
+
+    <!-- Hero resumido (complementario) -->
     <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; padding: 1rem 0 2rem;">
       <div data-aos="fade-right">
         <h1 style="font-size: 2.6rem; font-weight: 800; color:#f8fafc;">TRÁFICO + <span style="color:var(--primary-light);">INGRESOS RESIDUALES</span> DE 5 NIVELES</h1>
@@ -359,7 +414,7 @@
       </div>
     </section>
 
-    <!-- DESGLOSE DE 5 NIVELES UNILEVEL (con estrategia 10x) -->
+    <!-- DESGLOSE DE 5 NIVELES UNILEVEL -->
     <section id="compensacion">
       <div class="unilevel-showcase" data-aos="fade-up">
         <h2>📊 DESGLOSE DE 5 NIVELES UNILEVEL</h2>
@@ -386,7 +441,7 @@
       </div>
     </section>
 
-    <!-- PRECIOS SENCILLOS -->
+    <!-- PRECIOS -->
     <section id="precios">
       <h2 class="section-title" data-aos="fade-up">💰 Precios sencillos. <span>Bonificaciones atractivas.</span></h2>
       <p style="text-align: center; color:#cbd5e1;">Empieza hoy, gana con inicio rápido, bono semanal e ingresos recurrentes.</p>
@@ -398,23 +453,22 @@
       <p style="text-align: center; font-size: 0.85rem; color:#94a3b8;">Al continuar aceptas Términos y Política de Privacidad.</p>
     </section>
 
-    <!-- REGISTRO ÚNICO: BOTÓN ANIMADO que redirige a la URL -->
+    <!-- REGISTRO ÚNICO (mismo enlace) -->
     <section id="registro-unico">
       <div class="register-single">
-        <a href="https://adincomenetwork.com/lc3.php?id=Jobs" target="_blank" class="btn-primary btn-register-glow">
+        <a href="https://adincomenetwork.com/lc3.php?id=Jobs" target="_blank" class="btn-primary btn-register-glow" id="registroLinkBtn">
           <i class="fas fa-user-plus"></i> REGÍSTRATE AHORA
         </a>
         <p style="margin-top: 1rem; color: #cbd5e1;">Haz clic y obtén acceso inmediato al sistema de ingresos residuales</p>
       </div>
     </section>
 
-    <!-- Pequeña estadística -->
     <div style="margin: 2rem 0; text-align: center;" data-aos="fade-up">
       <p style="font-weight: 600; color:#e2e8f0;"><i class="fas fa-globe" style="color:var(--primary-light);"></i> Más de 12,000 publishers activos confían en Aiviralads</p>
     </div>
   </div>
 
-  <!-- Footer (sin número visible, correo actualizado) -->
+  <!-- Footer -->
   <footer>
     <div class="container">
       <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; align-items: center;">
@@ -426,16 +480,17 @@
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- YouTube IFrame API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script>
     AOS.init({ duration: 800, once: true });
 
-    // Función para solicitar nombre y redirigir a WhatsApp (número oculto)
+    // ---------- LÓGICA DE WHATSAPP (nombre antes de enviar) ----------
     function askNameAndRedirectToWhatsApp() {
       let nombre = prompt("👋 ¡Hola! Por favor, ingresa tu nombre completo para contactarte por WhatsApp y comenzar tu registro en Aiviralads:");
       if (nombre && nombre.trim() !== "") {
         const mensaje = `Hola, mi nombre es ${encodeURIComponent(nombre.trim())}. Me interesa unirme al plan de ingresos residuales de 5 niveles y recibir más información.`;
-        // Número de WhatsApp oculto (no se muestra en la interfaz)
-        const waNumber = "13232850508";
+        const waNumber = "13232850508";  // Número oculto +1 323 285 0508
         const url = `https://wa.me/${waNumber}?text=${mensaje}`;
         window.open(url, '_blank');
       } else if (nombre !== null) {
@@ -443,12 +498,113 @@
       }
     }
 
-    // Asignar evento a los botones de WhatsApp: flotante y navbar
     const floatBtn = document.getElementById('floatWaButton');
     const navWaBtn = document.getElementById('navWABtn');
-
     if (floatBtn) floatBtn.addEventListener('click', askNameAndRedirectToWhatsApp);
     if (navWaBtn) navWaBtn.addEventListener('click', askNameAndRedirectToWhatsApp);
+
+    // ---------- VIDEO YOUTUBE REAL + REDIRECCIÓN 3 SEGUNDOS ANTES DEL FINAL ----------
+    const REGISTER_URL = "https://adincomenetwork.com/lc3.php?id=Jobs";
+    let player;
+    let redirectTriggered = false;
+    let checkInterval = null;
+    const statusDiv = document.getElementById('redirectStatus');
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('youtube-player', {
+        videoId: 'CNXNPxLNBLg',   // ID del video proporcionado
+        playerVars: {
+          'autoplay': 0,
+          'controls': 1,
+          'rel': 0,
+          'modestbranding': 1,
+          'fs': 1
+        },
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      // El video está listo
+      console.log("Video listo");
+    }
+
+    function onPlayerStateChange(event) {
+      // Si el video comienza a reproducirse (estado 1 = PLAYING)
+      if (event.data === YT.PlayerState.PLAYING && !redirectTriggered) {
+        // Limpiar interval previo si existe
+        if (checkInterval) clearInterval(checkInterval);
+        
+        // Obtener duración del video
+        const duration = player.getDuration(); // en segundos
+        if (duration && duration > 0) {
+          checkInterval = setInterval(() => {
+            if (redirectTriggered) {
+              clearInterval(checkInterval);
+              return;
+            }
+            const currentTime = player.getCurrentTime();
+            // Si faltan 3 segundos o menos para terminar (y no ha terminado aún)
+            // Además, evitar cuando currentTime >= duration (final exacto)
+            if (duration - currentTime <= 3.0 && duration - currentTime > 0 && currentTime < duration) {
+              // Mostrar aviso
+              if (statusDiv) {
+                statusDiv.style.display = "inline-block";
+                statusDiv.innerHTML = "🔴 Redirigiendo al registro en 3... 2... 1...";
+              }
+              redirectTriggered = true;
+              clearInterval(checkInterval);
+              // Redirigir a la URL de registro (se abre en la misma pestaña)
+              window.location.href = REGISTER_URL;
+            }
+            // También si el video termina exactamente (currentTime >= duration - 0.1)
+            if (duration - currentTime <= 0.2 && !redirectTriggered) {
+              if (statusDiv) statusDiv.style.display = "inline-block";
+              redirectTriggered = true;
+              clearInterval(checkInterval);
+              window.location.href = REGISTER_URL;
+            }
+          }, 300);
+        } else {
+          // Fallback si no se obtiene duración: escuchar evento de finalización
+          const checkFinish = setInterval(() => {
+            if (player && player.getCurrentTime && player.getDuration()) {
+              const dur = player.getDuration();
+              const curr = player.getCurrentTime();
+              if (dur - curr <= 3 && !redirectTriggered && dur > 0) {
+                redirectTriggered = true;
+                clearInterval(checkFinish);
+                window.location.href = REGISTER_URL;
+              }
+            }
+          }, 400);
+        }
+      }
+      
+      // Si el video termina y nunca se activó el intervalo por si acaso
+      if (event.data === YT.PlayerState.ENDED && !redirectTriggered) {
+        if (statusDiv) statusDiv.style.display = "inline-block";
+        redirectTriggered = true;
+        if (checkInterval) clearInterval(checkInterval);
+        window.location.href = REGISTER_URL;
+      }
+    }
+
+    // Exponer la función globalmente para la API
+    window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+
+    // Cargar la API manualmente (por si acaso ya está)
+    if (typeof YT === 'undefined') {
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    } else {
+      onYouTubeIframeAPIReady();
+    }
   </script>
 </body>
 </html>
