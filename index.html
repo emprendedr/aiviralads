@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Aiviralads | Red de Publicidad Viral</title>
+  <!-- Google Fonts + Font Awesome + AOS (Animaciones) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefefe;
+      color: #111827;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Variables de estilo moderno */
+    :root {
+      --primary: #7c3aed;
+      --primary-dark: #5b21b6;
+      --primary-light: #a78bfa;
+      --secondary: #f97316;
+      --dark: #0f172a;
+      --gray-bg: #f8fafc;
+      --shadow-sm: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+      --shadow-md: 0 20px 25px -12px rgba(0, 0, 0, 0.08);
+      --border-radius: 2rem;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      font-size: 0.8rem;
+      font-weight: 500;
+      background: none;
+      color: #6b7280;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #1e293b;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn-wa-nav {
+      background-color: #25D366;
+      color: white !important;
+      padding: 0.6rem 1.3rem;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .btn-wa-nav:hover {
+      background-color: #128C7E;
+      transform: scale(1.02);
+    }
+
+    /* Botones generales */
+    .btn-primary {
+      background: linear-gradient(95deg, var(--primary), var(--primary-dark));
+      color: white;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 14px -6px rgba(124, 58, 237, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 25px -12px rgba(124, 58, 237, 0.4);
+      background: linear-gradient(95deg, #8b5cf6, #6d28d9);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-wa {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 0.9rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-wa:hover {
+      background-color: #128C7E;
+      transform: scale(1.02);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 3rem 0 4rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .hero-content {
+      flex: 1.2;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #1e293b, var(--primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #4b5563;
+      margin: 1.5rem 0;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .hero-video {
+      flex: 0.9;
+      background: #00000010;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.4s;
+    }
+
+    .hero-video video {
+      width: 100%;
+      display: block;
+      border-radius: 32px;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    /* features */
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .section-title span {
+      background: linear-gradient(120deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2rem 1.5rem;
+      border-radius: 28px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s;
+      border: 1px solid #f1f5f9;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.12);
+      border-color: var(--primary-light);
+    }
+
+    .feature-icon {
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+    }
+
+    /* stats */
+    .stats-section {
+      background: linear-gradient(120deg, #f1f5f9, #ffffff);
+      border-radius: 48px;
+      padding: 3rem 2rem;
+      margin: 4rem 0;
+    }
+
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat-item h3 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    /* video showcase */
+    .video-showcase {
+      background: #0f172a;
+      border-radius: 48px;
+      padding: 3rem 2rem;
+      margin: 4rem 0;
+      color: white;
+      text-align: center;
+    }
+
+    .video-wrapper {
+      max-width: 800px;
+      margin: 2rem auto 0;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 25px 40px -12px black;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      display: block;
+    }
+
+    /* formulario registro */
+    .register-form {
+      background: white;
+      border-radius: 48px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+      margin: 4rem 0;
+      border: 1px solid #eef2ff;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .input-group input {
+      padding: 1rem;
+      border-radius: 28px;
+      border: 1px solid #e2e8f0;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px #a78bfa40;
+    }
+
+    .form-buttons {
+      grid-column: span 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 2.5rem 0;
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-wa {
+      color: #25D366;
+      font-size: 1.1rem;
+    }
+
+    /* floating WA */
+    .float-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s;
+      z-index: 99;
+    }
+
+    .float-wa:hover {
+      transform: scale(1.1);
+      background-color: #128C7E;
+    }
+
+    /* responsive */
+    @media (max-width: 800px) {
+      .hero {
+        flex-direction: column;
+      }
+      .navbar {
+        flex-direction: column;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-buttons {
+        grid-column: span 1;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating WhatsApp directo -->
+  <a href="https://wa.me/13232850508?text=Hola%21%20Quiero%20registrarme%20en%20Aiviralads%20y%20obtener%20m%C3%A1s%20informaci%C3%B3n" target="_blank" class="float-wa" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <div class="container">
+    <!-- Header -->
+    <nav class="navbar">
+      <div class="logo" data-aos="fade-right">
+        <h1>Aiviralads</h1>
+        <span>viral advertising network</span>
+      </div>
+      <div class="nav-links" data-aos="fade-left">
+        <a href="#">Inicio</a>
+        <a href="#features">Características</a>
+        <a href="#video">Video</a>
+        <a href="#registro">Registro</a>
+        <a href="https://wa.me/13232850508?text=Necesito%20ayuda%20con%20Aiviralads" class="btn-wa-nav" target="_blank"><i class="fab fa-whatsapp"></i> +1 323 285 0508</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section con video embebido + animación -->
+    <div class="hero">
+      <div class="hero-content" data-aos="fade-up" data-aos-duration="800">
+        <h1>Monetiza tu tráfico <br> con <span style="color:var(--primary);">Aiviralads</span></h1>
+        <p>La red de publicidad viral que impulsa tus ingresos con altos CPM, pagos rápidos y soporte 24/7. Únete hoy y multiplica tus ganancias.</p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/13232850508?text=Hola%2C%20quiero%20registrarme%20en%20Aiviralads%20como%20editor" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Regístrate por WhatsApp</a>
+          <a href="#video" class="btn-outline"><i class="fas fa-play"></i> Ver video demo</a>
+        </div>
+        <div style="margin-top: 1.8rem; display: flex; gap: 12px; align-items: center;">
+          <i class="fas fa-check-circle" style="color: var(--primary);"></i>
+          <span>Pagos semanales • Sin mínimos • Soporte en español</span>
+        </div>
+      </div>
+      <div class="hero-video" data-aos="zoom-in" data-aos-delay="150">
+        <video autoplay muted loop playsinline>
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-people-working-on-a-digital-marketing-strategy-26930-large.mp4" type="video/mp4">
+          Tu navegador no soporta video.
+        </video>
+      </div>
+    </div>
+
+    <!-- Features Cards con animaciones -->
+    <section id="features">
+      <h2 class="section-title" data-aos="fade-up">Características <span>potentes</span></h2>
+      <div class="features-grid">
+        <div class="feature-card" data-aos="flip-left" data-aos-duration="600">
+          <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Alto CPM Viral</h3>
+          <p>Gana hasta un 40% más que otras redes con nuestra tecnología de segmentación viral.</p>
+        </div>
+        <div class="feature-card" data-aos="flip-left" data-aos-duration="600" data-aos-delay="100">
+          <div class="feature-icon"><i class="fas fa-wallet"></i></div>
+          <h3>Pagos Rápidos</h3>
+          <p>Retiros semanales por PayPal, USDT y transferencia. Sin demoras.</p>
+        </div>
+        <div class="feature-card" data-aos="flip-left" data-aos-duration="600" data-aos-delay="200">
+          <div class="feature-icon"><i class="fas fa-headset"></i></div>
+          <h3>Soporte 24/7</h3>
+          <p>Atención personalizada por WhatsApp y chat en vivo para publishers.</p>
+        </div>
+        <div class="feature-card" data-aos="flip-left" data-aos-duration="600" data-aos-delay="300">
+          <div class="feature-icon"><i class="fas fa-chart-simple"></i></div>
+          <h3>Dashboard Analítico</h3>
+          <p>Reportes en tiempo real, CTR, impresiones y earnings al instante.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estadísticas animadas (counter) -->
+    <div class="stats-section" data-aos="fade-up">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3 id="counterPublishers">0</h3>
+          <p>Publishers activos</p>
+        </div>
+        <div class="stat-item">
+          <h3 id="counterImpressions">0</h3>
+          <p>Impresiones mensuales</p>
+        </div>
+        <div class="stat-item">
+          <h3 id="counterCPM">$0</h3>
+          <p>CPM promedio</p>
+        </div>
+        <div class="stat-item">
+          <h3 id="counterPaises">0</h3>
+          <p>Países alcanzados</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección Video principal (Showcase) -->
+    <section id="video">
+      <div class="video-showcase" data-aos="zoom-in-up">
+        <h2 style="color:white;">🎬 Descubre el poder de <span style="color: #a78bfa;">Aiviralads</span></h2>
+        <p style="color:#cbd5e1; margin-top: 0.6rem;">Mira cómo nuestra red transforma tu tráfico en ingresos virales</p>
+        <div class="video-wrapper">
+          <video controls poster="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=600">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-arrow-flying-through-target-1414-large.mp4" type="video/mp4">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-arrow-flying-through-target-1414-large.mp4" type="video/mp4">
+            Tu navegador no soporta video.
+          </video>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">* Video demostrativo de campañas virales - conviértete en socio hoy</p>
+      </div>
+    </section>
+
+    <!-- Formulario de registro + botones WhatsApp -->
+    <section id="registro">
+      <div class="register-form" data-aos="fade-up">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Regístrate ahora <span>y comienza a ganar</span></h2>
+        <p style="text-align: center; margin-bottom: 2rem;">Completa el formulario o escríbenos directamente por WhatsApp</p>
+        <form id="leadForm">
+          <div class="form-grid">
+            <div class="input-group">
+              <label><i class="fas fa-user"></i> Nombre completo</label>
+              <input type="text" id="nombre" placeholder="Ej: Carlos Gómez" required>
+            </div>
+            <div class="input-group">
+              <label><i class="fas fa-envelope"></i> Correo electrónico</label>
+              <input type="email" id="email" placeholder="tucorreo@ejemplo.com" required>
+            </div>
+            <div class="input-group">
+              <label><i class="fas fa-globe"></i> Sitio web / Canal (opcional)</label>
+              <input type="text" id="website" placeholder="https://tusitio.com">
+            </div>
+            <div class="input-group">
+              <label><i class="fab fa-whatsapp"></i> Teléfono (con código)</label>
+              <input type="tel" id="telefono" placeholder="+1 323 285 0508" required>
+            </div>
+            <div class="form-buttons">
+              <button type="submit" class="btn-primary" style="background: linear-gradient(95deg,#25D366,#128C7E);"><i class="fab fa-whatsapp"></i> Registrar vía WhatsApp</button>
+              <a href="https://wa.me/13232850508?text=Hola%20Aiviralads,%20quiero%20registrarme%20como%20publisher%20y%20obtener%20bonificaciones" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Registro directo WhatsApp</a>
+            </div>
+          </div>
+        </form>
+        <p style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color:#6c757d;">
+          <i class="fas fa-lock"></i> Tus datos están seguros. Al registrarse aceptas nuestros términos.
+        </p>
+      </div>
+    </section>
+
+    <!-- Imágenes adicionales con grid y efecto hover (detalle imágenes) -->
+    <div style="margin: 2rem 0 3rem;" data-aos="fade-up">
+      <h2 class="section-title">Impulsa tu <span>audiencia</span> con imágenes de alto impacto</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1.5rem;">
+        <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=400" alt="marketing digital" style="border-radius: 28px; width:100%; object-fit:cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="https://images.pexels.com/photos/2882631/pexels-photo-2882631.jpeg?auto=compress&cs=tinysrgb&w=400" alt="analytics" style="border-radius: 28px; width:100%; object-fit:cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="https://images.pexels.com/photos/6476260/pexels-photo-6476260.jpeg?auto=compress&cs=tinysrgb&w=400" alt="viral ads" style="border-radius: 28px; width:100%; object-fit:cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <h3 style="color:white;">Aiviralads</h3>
+          <p>© 2025 - Todos los derechos reservados</p>
+        </div>
+        <div>
+          <i class="fab fa-whatsapp footer-wa"></i> <a href="https://wa.me/13232850508" target="_blank" style="color:#a78bfa; text-decoration:none;">+1 323 285 0508</a>
+          <p style="font-size:0.8rem; margin-top:6px;">contacto@aiviralads.com</p>
+        </div>
+        <div>
+          <i class="fas fa-shield-alt"></i> Red de confianza global
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts AOS + Counters + Formulario WhatsApp -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Animación de contadores cuando entran en vista
+    const counters = [
+      { id: 'counterPublishers', target: 12450, suffix: '' },
+      { id: 'counterImpressions', target: 1280, suffix: 'M' },
+      { id: 'counterCPM', target: 12.8, suffix: ' USD', isFloat: true },
+      { id: 'counterPaises', target: 48, suffix: '' }
+    ];
+
+    function animateCounter(element, start, end, duration, suffix, isFloat) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        let current = start + (end - start) * progress;
+        if (isFloat) current = current.toFixed(1);
+        else current = Math.floor(current);
+        element.innerText = current + suffix;
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          element.innerText = (isFloat ? end.toFixed(1) : Math.floor(end)) + suffix;
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+
+    function startCounters() {
+      counters.forEach(counter => {
+        const el = document.getElementById(counter.id);
+        if (!el) return;
+        let targetVal = counter.target;
+        let startVal = 0;
+        if (counter.id === 'counterCPM') startVal = 0;
+        animateCounter(el, startVal, targetVal, 1500, counter.suffix || '', counter.isFloat || false);
+      });
+    }
+
+    // Intersection Observer para stats
+    const statsSection = document.querySelector('.stats-section');
+    let counted = false;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !counted) {
+          counted = true;
+          startCounters();
+          observer.unobserve(statsSection);
+        }
+      });
+    }, { threshold: 0.3 });
+    if (statsSection) observer.observe(statsSection);
+
+    // Manejo del formulario: envía datos por WhatsApp
+    const form = document.getElementById('leadForm');
+    const WA_NUMBER = '13232850508';
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const website = document.getElementById('website').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
+
+      if (!nombre || !email || !telefono) {
+        alert('Por favor completa nombre, correo y teléfono para registrarte.');
+        return;
+      }
+
+      const message = `Hola Aiviralads! 👋 Me interesa registrarme como publisher.%0A📌 *Nombre*: ${encodeURIComponent(nombre)}%0A📧 *Correo*: ${encodeURIComponent(email)}%0A📞 *Teléfono*: ${encodeURIComponent(telefono)}%0A🌐 *Web*: ${encodeURIComponent(website || 'No especificado')}%0A✅ Quiero empezar a ganar con la red viral.`;
+      const waLink = `https://wa.me/${WA_NUMBER}?text=${message}`;
+      window.open(waLink, '_blank');
+    });
+
+    // Pequeño efecto extra para videos: asegurar reproducción silenciosa en hero
+    const heroVideo = document.querySelector('.hero-video video');
+    if (heroVideo) {
+      heroVideo.play().catch(e => console.log("Autoplay bloqueado, pero no hay problema"));
+    }
+  </script>
+  <style>
+    /* Ajuste smooth para el fondo */
+    html {
+      scroll-padding-top: 80px;
+    }
+    .feature-card, .register-form, .video-showcase {
+      transition: all 0.2s;
+    }
+    img {
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+    }
+    .btn-primary, .btn-wa, .btn-outline {
+      cursor: pointer;
+    }
+    ::selection {
+      background: var(--primary-light);
+      color: #0f172a;
+    }
+  </style>
+</body>
+</html>
